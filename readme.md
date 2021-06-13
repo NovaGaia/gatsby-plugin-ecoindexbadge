@@ -1,4 +1,4 @@
-# gatsby-ecoindexbadge-plugin
+# gatsby-plugin-ecoindexbadge
 
 https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge
 
@@ -16,10 +16,12 @@ Les fonctions de calcul viennent de GreenIT-Analysis. `GNU Affero General Public
 
 Install via npm or yarn
 
-`npm install gatsby-ecoindexbadge-plugin --save yarn add gatsby-ecoindexbadge-plugin`
+`npm install gatsby-plugin-ecoindexbadge --save`
+
+`yarn add gatsby-plugin-ecoindexbadge`
 
 Just add the plugin to the plugins array in your gatsby-config.js
 
 ```javascript
-plugins: [`gatsby-ecoindexbadge-plugin`];
+plugins: [`gatsby-plugin-ecoindexbadge`];
 ```
