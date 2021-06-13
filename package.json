@@ -1,0 +1,39 @@
+{
+  "name": "gatsby-plugin-ecoindexbadge",
+  "version": "1.0.0",
+  "description": "Un badge affichant l'écoindex (simplifié) de la page",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "babel --out-file ./index.js src",
+    "changelog": "auto-changelog -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge.git"
+  },
+  "keywords": [
+    "react",
+    "ecoindex",
+    "greenit"
+  ],
+  "author": "NovaGaïa, Simon Vandaele",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge/issues"
+  },
+  "homepage": "https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge#readme",
+  "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "auto-changelog": "^2.3.0",
+    "babel-preset-gatsby-package": "^1.7.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}

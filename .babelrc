@@ -1,0 +1,8 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    ["babel-preset-gatsby-package", { "browser": true }]
+  ],
+  "plugins": ["@babel/plugin-transform-spread"]
+}
