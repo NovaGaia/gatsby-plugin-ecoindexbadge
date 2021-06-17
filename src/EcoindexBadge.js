@@ -84,6 +84,7 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
       reqNum: 'Nombre de requêtes',
       pageSize: 'Taille de la page',
       domSize: 'Taille du DOM',
+      pageURL: 'http://www.ecoindex.fr/quest-ce-que-ecoindex/',
     },
     EN: {
       percentError: '% error',
@@ -93,6 +94,7 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
       reqNum: 'Number of requests',
       pageSize: 'Page size',
       domSize: 'DOM size',
+      pageURL: 'http://www.ecoindex.fr/quest-ce-que-ecoindex/',
     },
   }
 
@@ -136,7 +138,6 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
       lang.lang.toString().toUpperCase() === 'EN'
         ? dictionary.EN
         : dictionary.FR
-    console.log(dic)
     // Affichage dans la barre d'admin
     let ecotitle =
       'ecoIndex: ' +
@@ -200,14 +201,9 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
 
     // Ajout de la note dans la barre d'admin
     setComponent(
-      <a
-        href="http://www.ecoindex.fr/quest-ce-que-ecoindex/"
-        id="ecoindex"
-        target="_blank"
-        title={ecotitle}
-      >
+      <a href={dic.pageURL} id="ecoindex" target="_blank" title={ecotitle}>
         ecoIndex
-        <span class={EcoIndexGrade}>
+        <span className={EcoIndexGrade}>
           {EcoIndexGrade + (p100error > 0 ? '*' : '')}
         </span>
       </a>

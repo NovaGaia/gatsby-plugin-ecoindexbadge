@@ -8,10 +8,10 @@ export const onRenderBody = (
   { setBodyAttributes, setPostBodyComponents },
   pluginOptions
 ) => {
-  let useExternalLibrary = pluginOptions.useExternalLibrary || true
+  let modeOfUse = pluginOptions.mode || 'external'
   setBodyAttributes({ style: { position: 'relative' } })
   setPostBodyComponents([
-    useExternalLibrary === 'true' && (
+    modeOfUse === 'external' && (
       <script
         key="ecoindex"
         src="https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js"

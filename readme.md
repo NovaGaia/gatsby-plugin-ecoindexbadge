@@ -12,6 +12,10 @@ C'est simplement un plugin qui va charger un javascript créé et hébergé par 
 
 Les fonctions de calcul viennent de GreenIT-Analysis. `GNU Affero General Public License AGPL v3 / Copyright (C) 2019 didierfred@gmail.com`
 
+### Changelog
+
+**More informations in [`HISTORY.md`](HISTORY.md)**
+
 ## How to install
 
 Install via npm or yarn
@@ -36,7 +40,7 @@ plugins: {
     {
         resolve: 'gatsby-plugin-ecoindexbadge',
         options: {
-            useExternalLibrary: false, // default:true
+            mode: 'manual', // 'external' / 'manual' default:'external'
         },
     },
     ...
@@ -45,7 +49,7 @@ plugins: {
 
 ## Available options
 
-`useExternalLibrary` indique au plugin de charger la library JavaScript de la communauté GreenIT plutôt que d'utiliser le composant interne `EcoindexBadge`.
+`mode` indique au plugin de charger la library JavaScript de la communauté GreenIT plutôt que d'utiliser le composant interne `EcoindexBadge`.
 
 ## Examples of usage
 
@@ -69,12 +73,19 @@ plugins: {
     {
         resolve: 'gatsby-plugin-ecoindexbadge',
         options: {
-            useExternalLibrary: false, // default:true
+            mode: 'manual', // 'external' / 'manual' default:'external'
         },
     },
     ...
 },
 ```
+
+**Mode :**
+
+- `external`appel et utilisation de la library GreenIT (mode par défaut)
+- `manual` utilisation du calcul interne [chargement de la library GreenIT désactivée(*)] et il faut ajouter sois-même le composant, voir point 2.
+
+(\*) Bonne pratique : L'utilisation du mode `manual` ne doit s'utiliser que si l'utilisation de la library externe entraine des bug ou conflits avec d'autres library.
 
 2. Faite l'import du composant :
 
