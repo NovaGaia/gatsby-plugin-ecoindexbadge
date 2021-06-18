@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "build": "babel --out-file ./index.js src",
+    "build": "babel src --out-dir . --ignore **/__tests__",
     "changelog": "auto-changelog -p --sort-commits date-desc"
   },
   "repository": {

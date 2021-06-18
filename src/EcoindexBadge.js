@@ -177,72 +177,26 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
     style.sheet.insertRule(
       '#ecoindex span { display: inline-block; width: 18px; height: 18px; font-size: 12px; line-height: 18px; margin: 0.1rem 0 0 0.5rem; text-align: center; border-radius: 50%; background-color: #f00; }'
     );
-    // if (EcoIndexGrade == 'A')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #349A47; color: #fff; }'
-    //   )
-    // else if (EcoIndexGrade == 'B')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #51B84B; color: #fff; }'
-    //   )
-    // else if (EcoIndexGrade == 'C')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #CADB2A; color: black; }'
-    //   )
-    // else if (EcoIndexGrade == 'D')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #F6EB15; color: black; }'
-    //   )
-    // else if (EcoIndexGrade == 'E')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #FECD06; color: black; }'
-    //   )
-    // else if (EcoIndexGrade == 'F')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #F99839; color: #fff; }'
-    //   )
-    // else if (EcoIndexGrade == 'G')
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #ED2124; color: #fff; }'
-    //   )
-    // else
-    //   style.sheet.insertRule(
-    //     '#ecoindex span { background-color: #ED2124; color: #fff; }'
-    //   )
-    let gradeColor = '#ED2124';
-    let textColor = '#fff';
-
-    switch (EcoIndexGrade) {
-      case 'A':
-        gradeColor = '#349A47';
-        break;
-      case 'B':
-        gradeColor = '#51B84B';
-        break;
-      case 'C':
-        gradeColor = '#CADB2A';
-        textColor = '#000';
-        break;
-      case 'D':
-        gradeColor = '#F6EB15';
-        textColor = '#000';
-        break;
-      case 'E':
-        gradeColor = '#FECD06';
-        textColor = '#000';
-        break;
-      case 'F':
-        gradeColor = '#F99839';
-        break;
-      default:
-        gradeColor = '#ED2124';
-    }
     style.sheet.insertRule(
-      '#ecoindex span { background-color: ' +
-        { gradeColor } +
-        '; color: ' +
-        { textColor } +
-        ' }'
+      '#ecoindex span.A { background-color: #349A47; color: #fff; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.B { background-color: #51B84B; color: #fff; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.C { background-color: #CADB2A; color: black; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.D { background-color: #F6EB15; color: black; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.E { background-color: #FECD06; color: black; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.F { background-color: #F99839; color: #fff; }'
+    );
+    style.sheet.insertRule(
+      '#ecoindex span.G { background-color: #ED2124; color: #fff; }'
     );
 
     setComponent(
