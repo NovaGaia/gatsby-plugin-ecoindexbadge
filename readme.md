@@ -4,13 +4,15 @@ https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge
 
 ## Description
 
-C'est un plugin GatsbyJS permetant d'afficher sur page un badge donnant les informations de l'impact écologique de la page consultée.
+This is a GatsbyJS plugin that displays a badge on the page giving information about the ecological impact of the page consulted.
 
 ### Learning Resources
 
-C'est simplement un plugin qui va charger un javascript créé et hébergé par **Simon Vandaele**.
+It is simply a plugin that will load a javascript created and hosted by **Simon Vandaele**.
 
-Les fonctions de calcul viennent de GreenIT-Analysis. `GNU Affero General Public License AGPL v3 / Copyright (C) 2019 didierfred@gmail.com`
+The calculation functions come from GreenIT-Analysis `GNU Affero General Public License AGPL v3 / Copyright (C) 2019 didierfred@gmail.com`
+
+More informations https://github.com/simonvdfr/ecoindex-light-js
 
 ### Changelog
 
@@ -26,7 +28,7 @@ Install via npm or yarn
 
 Just add the plugin to the plugins array in your `gatsby-config.js`
 
-```json
+```javascript
 plugins: {
     [`gatsby-plugin-ecoindexbadge`],
     ...
@@ -35,7 +37,7 @@ plugins: {
 
 or
 
-```json
+```javascript
 plugins: {
     {
         resolve: 'gatsby-plugin-ecoindexbadge',
@@ -49,26 +51,26 @@ plugins: {
 
 ## Available options
 
-`mode` indique au plugin de charger la library JavaScript de la communauté GreenIT plutôt que d'utiliser le composant interne `EcoindexBadge`.
+`mode` tells the plugin to load the GreenIT community JavaScript library instead of using the internal `EcoindexBadge` component.
 
 ## Examples of usage
 
 ### En utilisant la library GreenIT
 
-Simplement dans votre fichier de configuration `gatsby-config.js` charger le plugin ainsi :
+Simply in your configuration file `gatsby-config.js` load the plugin like this:
 
-```json
+```javascript
 plugins: {
     [`gatsby-plugin-ecoindexbadge`],
     ...
 }
 ```
 
-### En utilisant le composant interne `<EcoindexBadge lang="EN|FR" />`
+### Using the internal component `<EcoindexBadge lang="EN|FR" />`
 
 1. Configurez le plugin ainsi (sinon vous aurez plusieurs badges !) :
 
-```json
+```javascript
 plugins: {
     {
         resolve: 'gatsby-plugin-ecoindexbadge',
@@ -82,19 +84,19 @@ plugins: {
 
 **Mode :**
 
-- `external`appel et utilisation de la library GreenIT (mode par défaut)
-- `manual` utilisation du calcul interne [chargement de la library GreenIT désactivée(*)] et il faut ajouter sois-même le composant, voir point 2.
+- `external` calling and using the GreenIT library (default mode)
+- `manual` use of internal calculation [loading of GreenIT library disabled(*)] and you have to add the component yourself, see point 2.
 
-(\*) Bonne pratique : L'utilisation du mode `manual` ne doit s'utiliser que si l'utilisation de la library externe entraine des bug ou conflits avec d'autres library.
+(\*) Good practice: The `manual` mode should be used only if the use of the external library causes bugs or conflicts with other libraries.
 
-2. Faite l'import du composant :
+2. Import the component:
 
 ```javascript
-import EcoindexBadge from 'gatsby-plugin-ecoindexbadge'
+import EcoindexBadge from 'gatsby-plugin-ecoindexbadge';
 ```
 
-3. Dans votre code insérer le composant avec la langue à afficher :
+3. In your code insert the component with the language to be displayed:
 
 ```javascript
-<EcoindexBadge lang="EN|FR" />
+<EcoindexBadge lang='EN|FR' />
 ```
