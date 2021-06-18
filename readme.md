@@ -92,7 +92,7 @@ plugins: {
 2. Import the component:
 
 ```javascript
-import EcoindexBadge from 'gatsby-plugin-ecoindexbadge';
+import { EcoindexBadge } from 'gatsby-plugin-ecoindexbadge';
 ```
 
 3. In your code insert the component with the language to be displayed:
