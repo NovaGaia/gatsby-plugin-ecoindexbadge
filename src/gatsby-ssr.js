@@ -7,16 +7,15 @@ import React from 'react';
 
 function buildScriptLoader(pluginOptions) {
   let modeOfUse = pluginOptions.mode || 'external';
-  let extScript = '';
   if (modeOfUse === 'external') {
-    extScript = (
+    return (
       <script
         key='ecoindex'
         src='https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js'
       ></script>
     );
   }
-  return extScript;
+  return null;
 }
 
 function buildInformationMessage() {

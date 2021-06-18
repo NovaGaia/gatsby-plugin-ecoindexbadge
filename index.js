@@ -264,16 +264,15 @@ var _react = _interopRequireDefault(require("react"));
  */
 function buildScriptLoader(pluginOptions) {
   var modeOfUse = pluginOptions.mode || 'external';
-  var extScript = '';
 
   if (modeOfUse === 'external') {
-    extScript = /*#__PURE__*/_react["default"].createElement("script", {
+    return /*#__PURE__*/_react["default"].createElement("script", {
       key: "ecoindex",
       src: "https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js"
     });
   }
 
-  return extScript;
+  return null;
 }
 
 function buildInformationMessage() {
