@@ -16,7 +16,7 @@ More informations https://github.com/simonvdfr/ecoindex-light-js
 
 ### Changelog
 
-**More informations in [`HISTORY.md`](HISTORY.md)**
+**More informations in [`HISTORY.md`](https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge/blob/main/HISTORY.md)**
 
 ## How to install
 
@@ -68,7 +68,7 @@ plugins: {
 
 ### Using the internal component `<EcoindexBadge lang="EN|FR" />`
 
-1. Configurez le plugin ainsi (sinon vous aurez plusieurs badges !) :
+1. Configure the plugin like this (otherwise you will have several badges!):
 
 ```javascript
 plugins: {
