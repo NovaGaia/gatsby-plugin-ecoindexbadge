@@ -200,7 +200,13 @@ Calcul ecoIndex based on formula from web site www.ecoindex.fr
     );
 
     setComponent(
-      <a href={dic.pageURL} id='ecoindex' target='_blank' title={ecotitle}>
+      <a
+        href={dic.pageURL}
+        id='ecoindex'
+        target='_blank'
+        rel='noreferrer'
+        title={ecotitle}
+      >
         ecoIndex
         <span className={EcoIndexGrade}>
           {EcoIndexGrade + (p100error > 0 ? '*' : '')}

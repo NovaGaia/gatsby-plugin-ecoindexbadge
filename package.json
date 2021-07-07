@@ -1,12 +1,12 @@
 {
   "name": "gatsby-plugin-ecoindexbadge",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "A badge displaying the (simplified) ecoindex of the page",
   "main": "index.js",
   "scripts": {
     "test": "test",
     "build": "babel src --out-dir . --ignore **/__tests__",
-    "changelog": "auto-changelog -p --sort-commits date-desc"
+    "changelog": "auto-changelog -p --sort-commits date-desc && git add HISTORY.md"
   },
   "repository": {
     "type": "git",
