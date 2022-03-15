@@ -4,9 +4,9 @@
   "description": "A badge displaying the (simplified) ecoindex of the page",
   "main": "index.js",
   "scripts": {
-    "test": "test",
     "build": "babel src --out-dir . --ignore **/__tests__",
-    "changelog": "auto-changelog -p --sort-commits date-desc && git add HISTORY.md"
+    "watch": "babel -w src --out-dir . --ignore **/__tests__",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/NovaGaia/gatsby-plugin-ecoindexbadge#readme",
   "dependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.5",
-    "@babel/preset-env": "^7.14.5",
-    "auto-changelog": "^2.3.0",
-    "babel-preset-gatsby-package": "^1.7.1",
-    "prop-types": "^15.7.2",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "babel-preset-gatsby-package": "^1.14.0",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/plugin-syntax-jsx": "^7.14.5",
-    "@babel/preset-react": "^7.14.5",
-    "babel-cli": "^6.26.0"
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
+    "babel-cli": "^6.26.0",
+    "release-it": "^14.12.5"
   }
 }
