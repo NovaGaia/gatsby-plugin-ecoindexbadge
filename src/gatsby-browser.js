@@ -1,42 +1,30 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
-import React from 'react';
+import React from 'react'
 
-function buildScriptLoader(pluginOptions) {
-  let modeOfUse = pluginOptions.mode || 'external';
+exports.onRouteUpdate = pluginOptions => {
+  let modeOfUse = pluginOptions.mode || 'external'
   if (modeOfUse === 'external') {
-    return (
-      <script
-        key='ecoindex'
-        src='https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js'
-      ></script>
-    );
+    function load_js() {
+      const head = document.getElementsByTagName('head')[0]
+      const script = document.createElement('script')
+      script.key = 'ecoindex'
+      script.src =
+        'https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js'
+      head.appendChild(script)
+    }
+    load_js()
+    function calculateECOIndex() {
+      setTimeout(function () {
+        const e = document.getElementsByTagName('*').length,
+          n = window.performance.getEntriesByType('resource')
+        n.push({
+          name: 'Page HTML',
+          transferSize:
+            window.performance.getEntriesByType('navigation')[0].transferSize,
+        }),
+          ecoindex(e, n)
+      }, 1e3)
+    }
+    calculateECOIndex()
   }
-  return null;
+  return null
 }
-
-function buildInformationMessage() {
-  return (
-    <script
-      key='ecoindex_message'
-      dangerouslySetInnerHTML={{
-        __html: `
-        console.log("l'Écoindex, c'est quoi ? http://www.ecoindex.fr/quest-ce-que-ecoindex/")
-      `,
-      }}
-    />
-  );
-}
-export const onRenderBody = (
-  { setBodyAttributes, setPostBodyComponents },
-  pluginOptions
-) => {
-  setBodyAttributes({ style: { position: 'relative' } });
-  setPostBodyComponents([
-    buildScriptLoader(pluginOptions),
-    buildInformationMessage(),
-  ]);
-};
