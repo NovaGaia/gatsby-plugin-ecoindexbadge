@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-ecoindexbadge",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "A badge displaying the (simplified) ecoindex of the page",
   "main": "index.js",
   "scripts": {
