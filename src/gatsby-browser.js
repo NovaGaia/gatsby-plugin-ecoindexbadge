@@ -19,14 +19,16 @@ exports.onRouteUpdate = pluginOptions => {
     load_js()
     function calculateECOIndex() {
       setTimeout(function () {
-        const e = document.getElementsByTagName('*').length,
-          n = window.performance.getEntriesByType('resource')
-        n.push({
-          name: 'Page HTML',
-          transferSize:
-            window.performance.getEntriesByType('navigation')[0].transferSize,
-        }),
-          ecoindex(e, n)
+        if (ecoindex !== undefined) {
+          const e = document.getElementsByTagName('*').length,
+            n = window.performance.getEntriesByType('resource')
+          n.push({
+            name: 'Page HTML',
+            transferSize:
+              window.performance.getEntriesByType('navigation')[0].transferSize,
+          }),
+            ecoindex(e, n)
+        }
       }, 1e3)
     }
     calculateECOIndex()
