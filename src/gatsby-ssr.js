@@ -30,13 +30,27 @@ function buildInformationMessage() {
     />
   )
 }
-export const onRenderBody = (
-  { setBodyAttributes, setPostBodyComponents },
-  pluginOptions
-) => {
+export const onRenderBody = ({
+  setBodyAttributes,
+  setPostBodyComponents,
+  setHeadComponents,
+}) => {
+  const preconnectEcoIndex =
+    ((
+      <link
+        rel="preconnect"
+        key="preconnect-ecoindex"
+        href="https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js"
+      />
+    ),
+    (
+      <link
+        rel="dns-prefetch"
+        key="dns-prefetch-ecoindex"
+        href="https://cdn.jsdelivr.net/gh/simonvdfr/ecoindex-light-js@main/ecoindex.min.js"
+      />
+    ))
+  setHeadComponents([preconnectEcoIndex])
   setBodyAttributes({ style: { position: 'relative' } })
-  setPostBodyComponents([
-    // buildScriptLoader(pluginOptions),
-    buildInformationMessage(),
-  ])
+  setPostBodyComponents([buildInformationMessage()])
 }
