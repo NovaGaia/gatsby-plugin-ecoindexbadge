@@ -19,7 +19,7 @@ exports.onRouteUpdate = pluginOptions => {
     load_js()
     function calculateECOIndex() {
       setTimeout(function () {
-        if (ecoindex !== undefined) {
+        try {
           const e = document.getElementsByTagName('*').length,
             n = window.performance.getEntriesByType('resource')
           n.push({
@@ -28,6 +28,8 @@ exports.onRouteUpdate = pluginOptions => {
               window.performance.getEntriesByType('navigation')[0].transferSize,
           }),
             ecoindex(e, n)
+        } catch (error) {
+          // console.log(error);
         }
       }, 1e3)
     }
