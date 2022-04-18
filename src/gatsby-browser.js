@@ -8,6 +8,13 @@ import React from 'react'
 exports.onRouteUpdate = pluginOptions => {
   let modeOfUse = pluginOptions.mode || 'external'
   if (modeOfUse === 'external') {
+    function removeOldData() {
+      const oldResult = document.getElementById('ecoindex')
+      if (oldResult) {
+        oldResult.parentNode.removeChild(oldResult)
+      }
+    }
+    removeOldData()
     function load_js() {
       const head = document.getElementsByTagName('head')[0]
       const script = document.createElement('script')
